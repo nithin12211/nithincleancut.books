@@ -4,162 +4,262 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NithinCleanCut Books</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    /* ===== GENERAL ===== */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      color: #222;
-      background-color: #fafafa;
+      font-family: "Poppins", sans-serif;
+      color: #1a1a1a;
+      background: linear-gradient(180deg, #f8fafc, #eef2f7);
       line-height: 1.6;
     }
+
+    h1, h2, h3 {
+      color: #0d1b2a;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #004d40;
+      padding: 15px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .logo {
+      color: #ffd54f;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .menu a {
+      color: #ffffff;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #ffd54f;
+    }
+
+    /* ===== HEADER ===== */
     header {
-      background-color: #0073e6;
-      color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 120px 20px 90px;
+      background: linear-gradient(120deg, #009688, #00796b);
+      color: white;
+      border-bottom: 5px solid #c5a100;
     }
+
     header h1 {
-      font-size: 2.5em;
-      margin: 0;
+      font-size: 2.6rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
+
     header p {
-      margin-top: 10px;
-      font-size: 1.1em;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: 0 auto 30px;
+      opacity: 0.95;
     }
-    .buttons {
-      margin-top: 20px;
-    }
+
     .btn {
       display: inline-block;
-      padding: 10px 20px;
-      border: 2px solid white;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      margin: 5px;
-      transition: 0.3s;
+      padding: 12px 26px;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      transition: all 0.3s ease;
+      border: none;
     }
+
     .btn.primary {
-      background: white;
-      color: #0073e6;
-    }
-    .btn:hover {
-      background: #005bb5;
-      color: white;
-      border-color: #005bb5;
+      background: #ffd54f;
+      color: #004d40;
     }
 
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2, h3 {
-      text-align: center;
-      color: #0073e6;
-    }
-
-    /* Collection Section */
-    .collection .sub {
-      text-align: center;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .book-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .book-list li {
-      background: white;
-      padding: 15px 20px;
-      margin: 10px 0;
-      border-left: 5px solid #0073e6;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .book-list li:hover {
+    .btn.primary:hover {
+      background: #ffca28;
       transform: translateY(-3px);
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
-    /* Worldwide + About + Contact + Footer */
-    .worldwide, .about, .contact {
+    .btn.secondary {
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+    }
+
+    .btn.secondary:hover {
+      background: #ffffff;
+      color: #004d40;
+      transform: translateY(-3px);
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
       text-align: center;
+      padding: 70px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #004d40;
+      margin-bottom: 10px;
+    }
+
+    .sub {
+      color: #777;
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    /* ===== BOOK CARDS ===== */
+    .book-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .book {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      transition: all 0.25s ease;
+      border-top: 4px solid #009688;
+      color: #333;
+    }
+
+    .book:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    /* ===== WORLDWIDE ===== */
+    .worldwide .btn {
+      background: #009688;
+      color: #fff;
+      margin: 8px;
+    }
+
+    .worldwide .btn:hover {
+      background: #00796b;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     footer {
-      background-color: #0073e6;
-      color: white;
       text-align: center;
-      padding: 15px 10px;
-      margin-top: 40px;
+      padding: 25px;
+      background: #004d40;
+      color: #e0f2f1;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+      }
+      .menu {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Section -->
-  <header>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">NithinCleanCut Books</div>
+      <div class="menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header id="home">
     <h1>NithinCleanCut Books</h1>
     <p>Smart Journals, Trackers & Planners – Available Worldwide on Amazon. Discover tools that help you organize your life with elegance and simplicity.</p>
     <div class="buttons">
       <a href="#books" class="btn primary">Explore Books</a>
-      <a href="#about" class="btn">About Me</a>
     </div>
   </header>
 
-  <!-- Book Section -->
-  <section id="books" class="collection">
+  <!-- BOOK COLLECTION -->
+  <section id="books">
     <h2>Explore My Collection</h2>
-    <p class="sub">Now Trending</p>
-    <ul class="book-list">
-      <li><strong>Scholarship Tracker – Apply, Win, Repeat:</strong> Organize Your Applications, Deadlines, and Results</li>
-      <li><strong>Trip Planning & Route Log for CDL Drivers:</strong> Map Your Journey, Track Stops & Stay Organized</li>
-      <li><strong>Password Keeper – Secure & Simple Organizer:</strong> Logins, Emails, and Passwords All in One Place</li>
-      <li><strong>Self-Care Tracker Logbook – Reflect, Recharge, Repeat</strong></li>
-      <li><strong>Daily Truck Maintenance & Inspection Log:</strong> Record Repairs, Safety Checks & Keep Your Rig Road-Ready</li>
-      <li><strong>Self-Care Journal – Reflect, Recharge, Grow:</strong> Daily Prompts to Support Mental Wellness and Personal Growth</li>
-      <li><strong>Daily Skincare Routine & Product Tracker:</strong> Monitor Products, Reactions, Progress & Glow Goals</li>
-      <li><strong>Baby Care & Routine Logbook:</strong> Track Feeding, Diapers, Sleep, Mood & Milestones for Newborns & Infants</li>
-      <li><strong>Story Idea Tracker – Capture, Develop, Create:</strong> Organize Your Fiction Ideas and Build Better Stories</li>
-      <li><strong>Exam Study Planner – Prepare, Practice, Perform:</strong> Organize Your Study Sessions and Boost Exam Confidence</li>
-    </ul>
+    <p class="sub">Top 10 Trending Books</p>
+    <div class="book-list">
+      <div class="book">Scholarship Tracker – Apply, Win, Repeat</div>
+      <div class="book">Trip Planning & Route Log for CDL Drivers</div>
+      <div class="book">Password Keeper – Secure & Simple Organizer</div>
+      <div class="book">Self-Care Tracker Logbook – Reflect, Recharge, Repeat</div>
+      <div class="book">Daily Truck Maintenance & Inspection Log</div>
+      <div class="book">Self-Care Journal – Reflect, Recharge, Grow</div>
+      <div class="book">Daily Skincare Routine & Product Tracker</div>
+      <div class="book">Baby Care & Routine Logbook</div>
+      <div class="book">Story Idea Tracker – Capture, Develop, Create</div>
+      <div class="book">Exam Study Planner – Prepare, Practice, Perform</div>
+    </div>
   </section>
 
-  <!-- Worldwide Section -->
+  <!-- WORLDWIDE -->
   <section class="worldwide">
     <h2>Available Worldwide</h2>
     <p>Get your copies from your local Amazon store.</p>
     <div class="buttons">
-      <a href="https://www.amazon.com/s?i=stripbooks&rh=p_27%3AK%2BKothapelly%2BNithin%2BKumar&s=relevancerank&text=K+Kothapelly+Nithin+Kumar&ref=dp_byline_sr_book_1" class="btn primary" target="_blank">Shop on Amazon USA</a>
-      <a href="https://www.amazon.co.uk/s?i=stripbooks&rh=p_27%3AK%2BKothapelly%2BNithin%2BKumar&s=relevancerank&text=K+Kothapelly+Nithin+Kumar&ref=dp_byline_sr_book_1" class="btn primary" target="_blank">Shop on Amazon UK</a>
-      <a href="https://www.amazon.com.au/s?i=books-single-index&rh=p_27%3AK%2BKothapelly%2BNithin%2BKumar&s=relevancerank&text=K+Kothapelly+Nithin+Kumar&ref=dp_byline_sr_book_1" class="btn primary" target="_blank">Shop on Amazon AU</a>
+      <a href="https://www.amazon.com/s?i=stripbooks&rh=p_27%3AK%2BKothapelly%2BNithin%2BKumar&s=relevancerank&text=K+Kothapelly+Nithin+Kumar&ref=dp_byline_sr_book_1" class="btn">Amazon USA</a>
+      <a href="https://www.amazon.co.uk/s?i=stripbooks&rh=p_27%3AK%2BKothapelly%2BNithin%2BKumar&s=relevancerank&text=K+Kothapelly+Nithin+Kumar&ref=dp_byline_sr_book_1" class="btn">Amazon UK</a>
+      <a href="https://www.amazon.com.au/s?i=books-single-index&rh=p_27%3AK%2BKothapelly%2BNithin%2BKumar&s=relevancerank&text=K+Kothapelly+Nithin+Kumar&ref=dp_byline_sr_book_1" class="btn">Amazon AU</a>
     </div>
-    <p style="margin-top:15px; color:#555;">Available in more countries — kindly contact for links.</p>
+    <p style="margin-top: 10px; color: #555;">For other countries, contact me for links.</p>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h3>About My Mission</h3>
-    <p>I specialize in creating a wide range of notebooks, including journals, planners, and trackers, all available on Amazon KDP. My goal is to help people stay organized and productive in a simple and elegant way. I believe that a clear mind starts with clear tools, and I design each journal and planner with that philosophy at its core.</p>
+  <!-- ABOUT PAGE -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I design and publish journals, planners, and trackers that help people stay focused and organized in their daily lives. My books are made for clarity, purpose, and ease of use — blending clean design with practical layouts.</p>
   </section>
 
-  <!-- Contact Section -->
-  <section class="contact">
-    <h3>Get In Touch</h3>
-    <p>I’d love to hear from you. Connect with me through email or Instagram.</p>
+  <!-- CONTACT PAGE -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you’d like to collaborate, request book links, or share feedback, reach out anytime.</p>
     <div class="buttons">
-      <a href="mailto:youremail@example.com" class="btn">Email Me</a>
-      <a href="https://instagram.com/cleancutreviews" class="btn">Follow on Instagram</a>
+      <a href="mailto:youremail@example.com" class="btn" style="background:#009688;color:white;">Email Me</a>
+      <a href="https://instagram.com/cleancutreviews" class="btn" style="background:#ffd54f;color:#004d40;">Instagram</a>
     </div>
   </section>
 
